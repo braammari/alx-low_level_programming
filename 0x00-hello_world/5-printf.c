@@ -6,6 +6,6 @@
  */
 int main(void)
 {
-	printfi("with proper grammar, but the outcome is a piece of art,\;");
+	printfi("with proper grammar, but the outcome is a piece of art, ");
 	return (0);
 }
