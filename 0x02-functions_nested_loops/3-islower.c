@@ -1,15 +1,10 @@
 #include "main.h"
-/**
- * _islower - check the code.
- *
- * Return: Always 0.
- */
 
 /**
- * _islower - checks for lower case
- * return: 1 if lower case, 0 otherwise
- * @c: the ASCII of letter
- * **/
+ * _islower - checks for lower case.
+ * Return 1 if lower case, 0 otherwise.
+ * @c:is the ASCII of letter
+ **/
 
 int _islower(int c)
 {
