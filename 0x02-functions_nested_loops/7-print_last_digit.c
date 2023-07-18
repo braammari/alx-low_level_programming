@@ -15,7 +15,7 @@ _putchar(n + '0');
 }
 else
 {
-n=n % 10;
+n = n % 10;
 n = -1 * n;
 _putchar(n + '0');
 }
