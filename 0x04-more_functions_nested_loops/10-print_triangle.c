@@ -17,9 +17,9 @@ for (i = 0; i < size ; i++)
 
 	}
 	for (k = 0; k <= i ; k++)
-        {
-                _putchar(35);
-        }
+	{
+		_putchar(35);
+	}
 	if (i != size - 1)
 	{
 		_putchar('\n');
