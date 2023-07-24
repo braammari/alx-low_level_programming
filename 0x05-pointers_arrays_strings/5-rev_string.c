@@ -22,5 +22,5 @@ for (i = n - 1, j = 0; j < n; i--, j++)
 {
 ptr[j] = s[i];
 }
-
+*s=ptr;
 }
