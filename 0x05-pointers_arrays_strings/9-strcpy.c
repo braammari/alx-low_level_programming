@@ -9,18 +9,16 @@
 
 char *_strcpy(char *dest, char *src)
 {
-int i;
-int n = 0;
-char t[1000];
-dest = t;
+char *copdest;
+copdest = dest;
 
-while (src[n] != '\0')
+while (*src != '\0')
 {
-n++;
+	*dest = *src;
+	src++;
+	dest++;
 }
-for (i = 0; i < n; i++)
-{
-*dest[i] = *src[i];
-}
-return (dest);
+*dest = '\0';
+
+return (copdest);
 }
