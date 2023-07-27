@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * *_strcat - gives the lenght of a string
+ * *_strncat - gives the lenght of a string
  * @dest: is an array
  * @src: is an array
  * @n: is integer
