@@ -21,8 +21,8 @@ while (*src != '\0')
 	if (i < n)
 	{
 		*copdest = *src;
+		copdest++;
 	}
-	copdest++;
 	src++;
 	i++;
 }
