@@ -1,35 +1,36 @@
+#include <stdlib.h>
+#include <time.h>
 #include "main.h"
+
 /**
- * is_prime_help - returns if the integer is prime
- * @n: is the num to check
- * @i: is the initil divisor num
- * Return: the result
- */
-int is_prime_help(int n, int i)
+* calculate_sqrt_root -  Entrypoint
+* Description: 'the program's description int calculate_sqrt_root
+* @n: 1 param
+* @y: 2 param
+* Return: Always 0 (Success)
+*/
+int calculate_sqrt_root(int n, int y)
 {
-	if (n <= 1)
-	{
-		return (0);
-	}
-	else if (i < n)
-	{
-		if (n % i == 0)
-		{
-			return (0);
-		}
-		else
-		{
-			return (is_prime_help(n, i + 1));
-		}
-	}
+	if (n < 0)
+		return (-1);
+	if (n == 1 || n == 0)
+		return (n);
+	if (y * y < n)
+		return (calculate_sqrt_root(n, y + 1));
+	if (y * y == n)
+		return (y);
+	if (y > n || (y * y) > n)
+		return (-1);
 	return (1);
 }
 /**
- * is_prime_number - checks for a prime numbers
- * @n: is the number to check
- * Return: the result
- */
-int is_prime_number(int n)
+* _sqrt_recursion-  Entrypoint
+* Description: 'the program's description int _sqrt_recursion
+* @n: 1 param
+* Return: Always 0 (Success)
+*/
+
+int _sqrt_recursion(int n)
 {
-	return (is_prime_help(n, 2));
+	return (calculate_sqrt_root(n, 1));
 }
