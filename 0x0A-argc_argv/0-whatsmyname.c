@@ -4,7 +4,7 @@
 /**
  * main - Entry point
  * @argc: is integer count
- * @argv is an array
+ * @argv: is an array
  * Return: Always 0 (Success)
  */
 
