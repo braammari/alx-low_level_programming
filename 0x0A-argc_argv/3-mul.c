@@ -12,10 +12,18 @@ int main(int argc, char *argv[])
 {
 	int i, p = 1;
 
-	for (i = 1; i < argc; i++)
+	if (argc == 1)
 	{
-		p = p * atoi(argv[i]);
+		printf("Error\n");
 	}
-printf("%d\n", p);
+	else
+	{
+		for (i = 1; i < argc; i++)
+		{
+			p = p * atoi(argv[i]);
+		}
+
+	printf("%d\n", p);
+	}
 return (0);
 }
