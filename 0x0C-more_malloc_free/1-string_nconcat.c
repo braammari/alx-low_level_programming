@@ -1,52 +1,65 @@
 #include "main.h"
 /**
- * *string_nconcat - concatinate two strings
- * @s1: is an array
- * @s2: is an array
- * @n: is an intger
- * Return: pointer NULL or copy of str
- */
+* _strlen -  Entrypoint
+* Description: 'the program's description _strlen
+* @s : 1 param
+*  Return: Always 0 (Success)
+*/
 
+int _strlen(char *s)
+{
+	int t = 0, len = 0;
+
+	if (s == NULL)
+		return (len);
+	while (*(s + t) != '\0')
+	{
+		len = len + 1;
+		t++;
+	}
+	return (len);
+}
+
+/**
+* string_nconcat -  Entrypoint
+* Description: 'the program's description string_nconcat
+* @s1 : 1 param
+* @s2 : 2 param
+* @n : 3 param
+*  Return: Always 0 (Success)
+*/
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int j = 0, i, m, k = 0;
-	char *p;
+	char *s;
+	unsigned int i = 0, j = 0, m = 0, len = 0;
 
-	if (s2 == NULL)
-	{
-		s1 = "";
-	}
-	if (s1 == NULL)
-	{
-		s2 = "";
-	}
-	while (s1[j] != '\0')
-	{
-		j++;
-	}
-	while (s2[k] != '\0')
-	{
-		k++;
-	}
-	if (n < k)
-	{
-		m = n;
-	}
+	len = (unsigned int)_strlen(s2);
+	if (n >  len)
+		m = len;
 	else
-		m = k;
-	p = (char *)malloc(sizeof(char) * (j + m + 1));
-	if (p == NULL)
+		m = n;
+	s = malloc(sizeof(char) * (_strlen(s1) + m) + 1);
+	if (s)
 	{
-		return (NULL);
+		if (s1 != NULL)
+		{
+			while (*(s1 + i) != '\0')
+			{
+				*(s + i) = *(s1 + i);
+				i++;
+			}
+		}
+		if (s2 != NULL)
+		{
+			while (j < m)
+			{
+				*(s + i) = *(s2 + j);
+				i++;
+				j++;
+			}
+		}
+		*(s + i) = '\0';
+		return (s);
 	}
-	for (i = 0; i < j; i++)
-	{
-		*(p + i) = *(s1 + i);
-	}
-	for (i = j; i < j + m; i++)
-	{
-		*(p + i) = *(s2 + i - j);
-	}
-	*(p + i) = '\0';
-	return (p);
+	return (NULL);
 }
