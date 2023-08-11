@@ -1,4 +1,4 @@
-include "main.h"
+#include "main.h"
 /**
  * *string_nconcat - concatinate two strings
  * @s1: is an array
