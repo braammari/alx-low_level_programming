@@ -1,4 +1,4 @@
-#include "main.h"
+include "main.h"
 /**
  * *string_nconcat - concatinate two strings
  * @s1: is an array
@@ -13,30 +13,38 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *p;
 
 	if (s2 == NULL)
+	{
 		s1 = "";
+	}
 	if (s1 == NULL)
+	{
 		s2 = "";
+	}
 	while (s1[j] != '\0')
+	{
 		j++;
+	}
 	while (s2[k] != '\0')
+	{
 		k++;
+	}
 	if (n < k)
-		p = (char *)malloc(sizeof(char) * (j + n + 1));
-		if (p == NULL)
-			return (NULL);
-		for (i = 0; i < j; i++)
-			*(p + i) = *(s1 + i);
-		for (i = j; i < j + n; i++)
-			*(p + i) = *(s2 + i - j);
-	else
-		p = (char *)malloc(sizeof(char) * (j + k + 1));
-		if (p == NULL)
-			return (NULL);
-		for (i = 0; i < j; i++)
-			*(p + i) = *(s1 + i);
-		for (i = j; i < j + k; i++)
-			*(p + i) = *(s2 + i - j);
+	{
+		k = n;
+	}
+	p = (char *)malloc(sizeof(char) * (j + k + 1));
+	if (p == NULL)
+	{
+		return (NULL);
+	}
+	for (i = 0; i < j; i++)
+	{
+		*(p + i) = *(s1 + i);
+	}
+	for (i = j; i < j + k; i++)
+	{
+		*(p + i) = *(s2 + i - j);
+	}
 	*(p + i) = '\0';
 	return (p);
 }
-
