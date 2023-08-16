@@ -10,7 +10,6 @@
 *  Return: Always 0 (Success)
 */
 
-
 int int_index(int *array, int size, int (*cmp)(int))
 {
 	if (size <= 0)
