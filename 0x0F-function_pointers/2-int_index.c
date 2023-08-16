@@ -22,11 +22,10 @@ int int_index(int *array, int size, int (*cmp)(int))
 		{
 			i++;
 		}
-		if (i < size)
+		if (i <= size)
 			return (i);
 		else
 			return (-1);
 	}
-	else 
-		return (-1);
+return (-1);
 }
