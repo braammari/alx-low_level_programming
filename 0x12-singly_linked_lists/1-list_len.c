@@ -3,7 +3,7 @@
 #include "lists.h"
 
 /**
-* print_list -  Function do things
+* list_len -  Function do things
 * @h: a pointer of type list_t
 * Return: i (Success)
 */
