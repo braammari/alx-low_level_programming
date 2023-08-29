@@ -9,22 +9,19 @@
 */
 
 
-size_t print_list(const list_t *h)
+int pop_listint(listint_t **head)
 {
-	size_t i = 0;
-
-	while (h != NULL)
+	if (*head == NULL)
 	{
-		if (h->str == NULL)
-		{
-			printf("[0] (nil)\n");
-		}
-		else
-		{
-			printf("[%d] %s\n", h->len, h->str);
-		}
-		i++;
-		h = h->next;
+		return (0);
 	}
-	return (i);
+	else
+	{
+		listint_t *position = *head;
+		int n = (*head)->n;
+
+		*head = (*head)->next;
+		free(position);
+		return (n);
+	}
 }
