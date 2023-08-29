@@ -14,7 +14,7 @@ void free_listint2(listint_t **head)
 	listint_t *aux;
 
 	if (*head == NULL)
-		ree(head);
+		free(head);
 	while (position != NULL)
 	{
 		aux = position;
