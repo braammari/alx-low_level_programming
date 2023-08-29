@@ -3,9 +3,9 @@
 #include "lists.h"
 
 /**
-* print_list -  Function do things
-* @h: a pointer of type list_t
-* Return: i (Success)
+* pop_listint -  Function do things
+* @head: a pointer of type list_t
+* Return: n (Success)
 */
 
 
