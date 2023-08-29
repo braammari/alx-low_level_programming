@@ -3,28 +3,22 @@
 #include "lists.h"
 
 /**
-* print_list -  Function do things
-* @h: a pointer of type list_t
-* Return: i (Success)
+* sum_listint -  Function do things
+* @head: a pointer of type list_t
+* Return: S (Success)
 */
 
-
-size_t print_list(const list_t *h)
+int sum_listint(listint_t *head)
 {
-	size_t i = 0;
+	listint_t *aux = head;
+	int S = 0;
 
-	while (h != NULL)
+	if (head == NULL)
+		return (0);
+	while (aux != NULL)
 	{
-		if (h->str == NULL)
-		{
-			printf("[0] (nil)\n");
-		}
-		else
-		{
-			printf("[%d] %s\n", h->len, h->str);
-		}
-		i++;
-		h = h->next;
+		S = S + aux->n;
+		aux = aux->next;
 	}
-	return (i);
+	return (S);
 }
