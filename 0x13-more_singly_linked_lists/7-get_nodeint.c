@@ -3,28 +3,24 @@
 #include "lists.h"
 
 /**
-* print_list -  Function do things
-* @h: a pointer of type list_t
-* Return: i (Success)
+* get_nodeint_at_index - Function do things
+* @head: a pointer of type list_t
+* @index: 2 param
+* Return: count or NULL (Success)
 */
 
-
-size_t print_list(const list_t *h)
+listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-	size_t i = 0;
+	listint_t *count = head;
+	unsigned int i = 0;
 
-	while (h != NULL)
+	while (count != NULL && i < index)
 	{
-		if (h->str == NULL)
-		{
-			printf("[0] (nil)\n");
-		}
-		else
-		{
-			printf("[%d] %s\n", h->len, h->str);
-		}
 		i++;
-		h = h->next;
+		count = count->next;
 	}
-	return (i);
+	if (count != NULL)
+		return (count);
+	else
+		return (NULL);
 }
