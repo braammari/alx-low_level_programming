@@ -3,28 +3,36 @@
 #include "lists.h"
 
 /**
-* print_list -  Function do things
-* @h: a pointer of type list_t
-* Return: i (Success)
+* insert_nodeint_at_index -  Function do things
+* @head: a pointer of type list_t
+* @idx: 2 param
+* @n: 3 param
+* Return: pointer (Success)
 */
 
-
-size_t print_list(const list_t *h)
+listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	size_t i = 0;
+	listint_t *aux = *head;
+	listint_t *new;
+	unsigned int i = 0;
 
-	while (h != NULL)
+	new = malloc(sizeof(listint_t));
+	if (new == NULL)
+		return (NULL);
+	new->n = n;
+	if (*head == NULL || idx == 0)
+		return (NULL);
+	while (aux != NULL && i < idx - 1)
 	{
-		if (h->str == NULL)
-		{
-			printf("[0] (nil)\n");
-		}
-		else
-		{
-			printf("[%d] %s\n", h->len, h->str);
-		}
 		i++;
-		h = h->next;
+		aux = aux->next;
 	}
-	return (i);
+	if (aux == NULL)
+	{
+		free(new);
+		return (NULL);
+	}
+	new->next = aux->next;
+	aux->next = new;
+	return (new);
 }
