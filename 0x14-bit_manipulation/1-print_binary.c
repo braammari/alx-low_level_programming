@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdarg.h>
-#include "lists.h"
+#include "main.h"
 
 /**
 * print_binary -  Function do things
