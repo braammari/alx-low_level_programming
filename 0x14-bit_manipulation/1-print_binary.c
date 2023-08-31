@@ -3,20 +3,15 @@
 #include "lists.h"
 
 /**
-* print_listint -  Function do things
-* @h: a pointer of type list_t
-* Return: i (Success)
+* print_binary -  Function do things
+* @n: a pointer of type list_t
+* Return: (Success)
 */
-
-size_t print_listint(const listint_t *h)
+void print_binary(unsigned long int n)
 {
-	size_t i = 0;
-
-	while (h != NULL)
+	if (n > 1)
 	{
-		printf("%d\n", h->n);
-		i++;
-		h = h->next;
+		print_binary(n >> 1);
 	}
-	return (i);
+	_putchar((n & 1) + '0');
 }
