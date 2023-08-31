@@ -1,22 +1,24 @@
 #include <stdlib.h>
 #include <stdarg.h>
-#include "lists.h"
+#include "main.h"
+
 
 /**
-* print_listint -  Function do things
-* @h: a pointer of type list_t
+* get_bit -  Function do things
+* @n: 1 param
+* @index: 2 param
 * Return: i (Success)
 */
 
-size_t print_listint(const listint_t *h)
-{
-	size_t i = 0;
 
-	while (h != NULL)
+int get_bit(unsigned long int n, unsigned int index)
+{
+	unsigned long int mask;
+
+	if (index >= sizeof(unsigned long int) * 8)
 	{
-		printf("%d\n", h->n);
-		i++;
-		h = h->next;
+		return (-1);
 	}
-	return (i);
+	mask = 1UL << index;
+	return ((n & mask) != 0);
 }
