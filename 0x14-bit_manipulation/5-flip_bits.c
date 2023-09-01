@@ -1,22 +1,27 @@
 #include <stdlib.h>
 #include <stdarg.h>
-#include "lists.h"
+#include "main.h"
 
 /**
-* print_listint -  Function do things
-* @h: a pointer of type list_t
+* flip_bits -  Function do things
+* @n: 1 param
+* @m: 2 param
 * Return: i (Success)
 */
 
-size_t print_listint(const listint_t *h)
+unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	size_t i = 0;
+	unsigned long int var = n ^ m;
+	unsigned int cal = 0;
 
-	while (h != NULL)
+	while (var > 0)
 	{
-		printf("%d\n", h->n);
-		i++;
-		h = h->next;
+		if (var & 1)
+		{
+			cal++;
+		}
+		var >>= 1;
 	}
-	return (i);
+	return (cal);
 }
+
